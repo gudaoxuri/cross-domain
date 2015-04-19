@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <script src="jquery-1.9.1.js"></script>
+    <script src="crossdomain.js"></script><!--跨域处理脚本-->
+    <script>
+        var crossDomain = new CrossDomain('cross_domain_transfer.html');  //初始化跨域类，传入目标域的跨域跳转页面URL
+        $(function () {
+            $('body').on('click', 'a', function () {
+                crossDomain.visit(' parent.result("' + $(this).text() + '")');    //执行跨域访问，这里要传入调用方式的字符串方式
+                //parent.result($(this).text());    //同域下直接调用的方法
+            });
+        });
+    </script>
+</head>
+<body>
+<a href="#this">jzy</a>
+<a href="#this">hcl</a>
+</body>
+</html>

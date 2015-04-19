@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <script>
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            return r != null ? r[2] : null;
+        }
+        var args = decodeURIComponent(getQueryString('args'));
+        eval('parent.' + args);
+    </script>
+</head>
+<body>
+</body>
+</html>
